@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Node Backend",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/src/server.ts",
+      "preLaunchTask": "Install dependencies",
+      "outFiles": ["${workspaceFolder}/server/dist/**/*.js"],
+      "runtimeArgs": ["-r", "tsx"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Full Stack Dev",
+      "type": "node",
+      "request": "launch",
+      "preLaunchTask": "Run Full Stack Dev",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}

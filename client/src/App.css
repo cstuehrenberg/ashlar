@@ -1,0 +1,127 @@
+.app-root {
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #1b1b1b;
+  background: linear-gradient(180deg, #f8f3ee 0%, #efe6db 100%);
+  min-height: 100vh;
+}
+
+.nav {
+  background: rgba(34, 30, 24, 0.95);
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  height: 44px;
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.links a {
+  color: rgba(255,255,255,0.9);
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero {
+  background: radial-gradient(ellipse at center, rgba(40,24,16,0.12) 0%, rgba(40,24,16,0.06) 40%, transparent 60%), linear-gradient(180deg, #f7efe6 0%, #f0e6d9 100%);
+  padding: 6rem 1rem;
+  text-align: center;
+}
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  color: #2c1f14;
+  margin: 0 0 1rem 0;
+}
+.hero-sub {
+  color: #5b4a3f;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+.hero-cta .btn {
+  margin: 0 0.5rem;
+}
+
+.hero-inner { position: relative; z-index: 1; }
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn.primary {
+  background: #7b3f1d;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(123,63,29,0.18);
+}
+.btn.ghost {
+  background: transparent;
+  color: #7b3f1d;
+  border: 1px solid rgba(123,63,29,0.12);
+}
+
+.features {
+  padding: 3rem 1rem;
+}
+.features-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.feature {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.feature h3 {
+  margin-top: 0;
+  color: #2c1f14;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 1.5rem 1rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5b4a3f;
+}
+.footer-links a {
+  margin-left: 1rem;
+  color: #5b4a3f;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 2rem; }
+  .nav-inner { padding: 0 0.5rem; }
+  .footer-inner { flex-direction: column; gap: 0.5rem; }
+}

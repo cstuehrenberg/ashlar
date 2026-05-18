@@ -1,0 +1,21 @@
+{
+  "name": "fullstack-app",
+  "version": "1.0.0",
+  "description": "Full-stack React and Node.js application with MySQL backend",
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "npm --prefix client start",
+    "server": "npm --prefix server start",
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
+

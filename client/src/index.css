@@ -1,0 +1,20 @@
+:root {
+  --text: #2c1f14;
+  --muted: #6b5848;
+  --accent: #7b3f1d;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  background: linear-gradient(180deg, #f8f3ee 0%, #efe6db 100%);
+}
+
+a { color: var(--accent); text-decoration: none; }
+
+* { box-sizing: border-box; }
