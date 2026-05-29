@@ -30,6 +30,81 @@ app.get('/api/data', async (req: Request, res: Response) => {
   }
 })
 
+// Get all products
+app.get('/api/products', async (req: Request, res: Response) => {
+  try {
+    const connection = await getConnection()
+
+    // Create products table if it doesn't exist
+    await connection.execute(`
+      CREATE TABLE IF NOT EXISTS products (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
+        teamName VARCHAR(255) NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )
+    `)
+
+    // Fetch all products
+    const [products] = await connection.execute('SELECT * FROM products ORDER BY createdAt DESC')
+
+    connection.release()
+
+    res.json(products)
+  } catch (error) {
+    console.error('Error fetching products:', error)
+    res.status(500).json({ error: 'Failed to fetch products' })
+  }
+})
+
+// Create new product endpoint
+app.post('/api/products', async (req: Request, res: Response) => {
+  try {
+    const { name, description, teamName } = req.body
+
+    // Validate input
+    if (!name || !description || !teamName) {
+      res.status(400).json({ error: 'Missing required fields' })
+      return
+    }
+
+    const connection = await getConnection()
+    
+    // Create products table if it doesn't exist
+    await connection.execute(`
+      CREATE TABLE IF NOT EXISTS products (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        description TEXT NOT NULL,
+        teamName VARCHAR(255) NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      )
+    `)
+
+    // Insert the product
+    const [result] = await connection.execute(
+      'INSERT INTO products (name, description, teamName) VALUES (?, ?, ?)',
+      [name, description, teamName]
+    )
+
+    connection.release()
+
+    res.status(201).json({
+      id: (result as any).insertId,
+      name,
+      description,
+      teamName,
+      message: 'Product created successfully'
+    })
+  } catch (error) {
+    console.error('Error creating product:', error)
+    res.status(500).json({ error: 'Failed to create product' })
+  }
+})
+
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response) => {
   console.error(err.stack)
