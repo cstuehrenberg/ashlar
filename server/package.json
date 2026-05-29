@@ -25,6 +25,7 @@
     "start": "tsx watch src/server.ts",
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
+    "init-db": "tsx src/init-db.ts",
     "lint": "eslint src"
   }
 }
