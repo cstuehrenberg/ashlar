@@ -1,48 +1,7 @@
-import { type MouseEvent, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-
-function Nav() {
-  const handleDropdownLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.currentTarget.blur()
-  }
-
-  return (
-    <header className="nav">
-      <div className="nav-inner">
-        <div className="logo">
-          <img src="/assets/logo-256.webp" alt="Ashlar" className="logo-img" />
-        </div>
-        <nav className="links">
-          <div className="dropdown">
-            <a className="drop-header" href="#about">About</a>
-            <div className="dropdown-menu">
-              <a href="#about-overview" onClick={handleDropdownLinkClick}>Overview</a>
-              <a href="#about-team" onClick={handleDropdownLinkClick}>Team</a>          
-            </div>
-          </div>
-
-          <div className="dropdown">
-            <a className="drop-header" href="#features">Features</a>
-            <div className="dropdown-menu">
-              <a href="#features-plan" onClick={handleDropdownLinkClick}>Plan</a>
-              <a href="#features-discover" onClick={handleDropdownLinkClick}>Dicover</a>
-              <a href="#features-learn" onClick={handleDropdownLinkClick}>Learn</a>
-            </div>
-          </div>
-
-          <div className="dropdown">
-            <a className="drop-header" href="#contact">Contact</a>
-            <div className="dropdown-menu">
-              <a href="#contact-support" onClick={handleDropdownLinkClick}>Support</a>
-              <a href="#contact-sales" onClick={handleDropdownLinkClick}>Sales</a>
-              <a href="#contact-careers" onClick={handleDropdownLinkClick}>Careers</a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-  )
-}
+import { Nav } from './components/Nav'
+import { Footer } from './components/Footer'
 
 function Hero() {
   return (
@@ -64,16 +23,16 @@ function Features() {
     <section id="features" className="features">
       <div className="features-grid">
         <div className="feature">
-          <h3>Scoped</h3>
-          <p>Robust Express API with MySQL connection pooling.</p>
+          <h3>Plan</h3>
+          <p>Tools to rapidly create high-value test plans mapping system qualities to technical components, instantly exposing core testing priorities.</p>
         </div>
         <div className="feature">
-          <h3>Explored</h3>
-          <p>Vite + React for instant dev feedback and production builds.</p>
+          <h3>Explore</h3>
+          <p>Session based exploratory testing merging the freedom and creativity of exploratory testing together with the accountability of structured metrics.</p>
         </div>
         <div className="feature">
-          <h3>Studied</h3>
-          <p>Monorepo structure and clear separation keep growth manageable.</p>
+          <h3>Learn</h3>
+          <p>See how our AI unlocks hidden product insights by transforming multiple information sources into a strategic blueprint for software excellence.</p>
         </div>
       </div>
     </section>
@@ -386,20 +345,6 @@ function Products() {
         )}
       </div>
     </section>
-  )
-}
-
-function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="footer-inner">
-        <div>© {new Date().getFullYear()} Ashlar</div>
-        <div className="footer-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-        </div>
-      </div>
-    </footer>
   )
 }
 
