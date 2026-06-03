@@ -1,10 +1,12 @@
-# Full-Stack React + Node.js + MySQL Application
+# Plan. Explore. Learn.
+## A New Operating System for Software Quality
 
-A modern full-stack web application featuring:
-- **Frontend**: React with TypeScript and Vite
-- **Backend**: Node.js Express server with TypeScript
-- **Database**: MySQL for data persistence
-- **Development**: Hot reload and concurrent development server
+Software quality still runs on a model that fragments insight and slows delivery. Critical signals stay scattered across teams, tools, and conversations while deterministic testing forces testers to wait for clear expected behaviors before they can confidently move.
+
+We’re building a different approach.
+
+**Project Ashlar** is a modern web platform connecting test strategy, exploratory execution, and intelligent analysis in one system helping leadership teams focus investment on the highest-risk areas, improve decision quality, and build a clearer view of product state over time.
+
 
 ## Project Structure
 
